@@ -1,0 +1,157 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: sans;
+    src: url('sans.ttf');
+}
+
+@font-face {
+    font-family: brush;
+    src: url("brushway.ttf");
+}
+
+body{
+    margin: 0;
+    font-family: sans;
+}
+
+.container{
+    background-image: url("coffee.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+:root{
+    --color-white:white;
+    --color-black: black;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-black);
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s;
+}
+
+.scrolled{
+    --color-white: black;
+    --color-black: white;
+}
+
+nav h1{
+    color: var(--color-white);
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+nav h1:hover{
+    color: orange;
+}
+
+nav ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+
+nav ul li{
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+nav ul li::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 50%;
+    height: 3px;
+    bottom: -3px;
+    background-color: orange;
+    transition: left 0.3s, width 0.3s;
+}
+
+nav ul li:hover::after{
+    left: 0;
+    width: 100%;
+}
+
+nav ul li a{
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover{
+    color: orange;
+}
+
+.dropdown_1{
+    display: none;
+}
+
+nav ul li:hover .dropdown_1 {
+    display: block;
+    position: absolute;
+    background-color: var(--color-black);
+    top: 25px;
+}
+
+.dropdown_1 ul{
+    padding: 0;
+    width: 120px;
+}
+
+.dropdown_1 ul li{
+    display: block;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.dropdown_2{
+    display: none;
+}
+
+.dropdown_1 ul li:hover .dropdown_2 {
+    display: block;
+    position: absolute;
+    background-color: var(--color-black);
+    top: 0;
+    left: 120px;
+}
+
+.dropdown_2 ul{
+    padding: 0;
+}
+
+.dropdown_2 ul li{
+    display: block;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+
+.fa-caret-right{
+    float: right;
+    margin-left: 5px;
+    padding: 3px;
+}
+
+
+.logo{
+    color: white;
+    background-color: black;
+    font-family: brush;
+    font-size: 200px;
+    margin-top: 230px;
+    text-align: center;
+}
